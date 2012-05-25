@@ -26,10 +26,22 @@
     <style type="text/css">
 
         .top-bar{width:100%; height:3px; background-color: #ee9515;}
-        #maincontent_heading{ margin-top: 50px; min-height:600px;}
+        #maincontent_heading{ margin-top: 50px; min-height:500px;}
         select { display: inline;}
         /*.maincontent { border: 1px; padding-top:50px; min-height: 500px;}*/
-        .mainlogo{padding-bottom: 20px; display:block; margin-left: auto; margin-right: auto;}
+        .ikon{display: inline; padding-right: 5px;}
+        /*.toprow{*/
+        /*background: #2a8fd3; *//* Old browsers */
+        /*background: -moz-linear-gradient(top, #2a8fd3 0%, #34ade5 100%); *//* FF3.6+ */
+        /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a8fd3), color-stop(100%,#34ade5)); *//* Chrome,Safari4+ */
+        /*background: -webkit-linear-gradient(top, #2a8fd3 0%,#34ade5 100%); *//* Chrome10+,Safari5.1+ */
+        /*background: -o-linear-gradient(top, #2a8fd3 0%,#34ade5 100%); *//* Opera 11.10+ */
+        /*background: -ms-linear-gradient(top, #2a8fd3 0%,#34ade5 100%); *//* IE10+ */
+        /*background: linear-gradient(top, #2a8fd3 0%,#34ade5 100%); *//* W3C */
+        /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a8fd3', endColorstr='#34ade5',GradientType=0 ); *//* IE6-9 */
+        /*}*/
+        .mainlogo{padding-bottom: 20px; display:block; margin-left: auto; margin-right: auto;
+        }
         .footer{ position:fixed;            bottom:0;            left:0;            right:0;            width:100%;
             height:57px; background: #d4dbd9; /* Old browsers */
             background: -moz-linear-gradient(top, #d4dbd9 0%, #ededed 100%); /* FF3.6+ */
@@ -51,22 +63,28 @@
 
 <div class="container">
     <div class="row">
-        <div class="twelve columns centered panel" id="maincontent_heading">
-            <img class="mainlogo" src="images/logowithfork.jpg" alt="logo">
+        <div class="ten columns centered panel" id="maincontent_heading">
+            <div class="row toprow">
 
-            <p> Number of Grubbers:
+            <img class="mainlogo" src="images/logo.png" alt="logo">
+
+            </div>
+            <h4> Hungry? Find great restaurant deals near you right now!</h4>
+            <hr>
+
+            <h5><img class="ikon" src="images/glyphicons_043_group.png" alt="partyof?"> Number of Grubbers:
                 <select>
                     <option> One </option>
                     <option> Two </option>
                     <option> Three </option>
                 </select>
-            </p>
-            <p> Grub Mode
+            </h5>
+            <h5> <img class="ikon" src="images/glyphicons_233_direction.png" alt="partyof?"> Grub Mode:
                 <select>
                     <option> Walking </option>
                     <option> Driving </option>
                 </select>
-            </p>
+            </h5>
             <hr>
             <a href="#" class="small white nice button radius right">go »</a>
 
