@@ -25,14 +25,13 @@ select { display: inline;}
     background: -ms-linear-gradient(top, #d4dbd9 0%,#ededed 100%); /* IE10+ */
     background: linear-gradient(top, #d4dbd9 0%,#ededed 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4dbd9', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */ }
-.footer p {float:right; padding-right:50px; padding-top: 20px;}
+.footer p{float:right; padding-right:50px; padding-top: 20px;}
 .icon-location{
     font-size: 18px;
     color: #07C400;
 }
 .icon-hourglass{
     font-size:14px;
-
 }
 /*body *{*/
     /*font-size: 1.6rem;*/
@@ -49,4 +48,23 @@ ul.vcard{
 .deal_icon {
     font-size: 16px;
     /*color: #8c2309;*/
+}
+/*Orbit div slider styling*/
+#featured{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    display: block;
+    margin-top:20%;
+}
+
+/*shortcut styling*/
+img.center{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.center{
+    text-align: center;
 }
