@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Submit Test</title>
+        <link rel="stylesheet" type="text/css" href="test.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript">
+$("document").ready(function(){
+        
+    });
+
+function submitted(){
+    $.post('write.php', {email:$("#emailAddress").val()});
+    $("#submitform").fadeOut('fast', function(){
+            $("#thanks").fadeIn('fast');
+            });
+}
+        </script>
+    </head>
+    <body>
+        <div id="submitform">
+            <input type="text" id="emailAddress" title="address" />
+            <button onclick="submitted()">Submit</button>
+        </div>
+        <div id="thanks" style="display:none;">
+            <h1>Thanks Dude!</h1>
+        </div>
+        <div>
+            <p>We'll hang on to your email only to let you know when we're available near you</p>
+        </div>
+    </body>
+</html>
