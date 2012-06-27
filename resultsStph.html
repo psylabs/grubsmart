@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <script src="http://static.firebase.com/v0/firebase.js"></script>
+    <link rel="stylesheet" href="stylesheets/fontello.css">
+    <style type="text/css">
+        .header-region{
+        }
+        #results > .row-fluid {
+            margin-top: .5em;
+            margin-botom: .5em
+        }
+        body {
+            background-image: url('images/purty_wood.png');
+            /*-moz-background-size: cover;*/
+            /*-webkit-background-size: cover;*/
+            /*-o-background-size: cover;*/
+            /*background-size: cover;*/
+            /*min-width:760px*/
+        }
+        #index-page{margin-top:30%}
+        #logo {
+            height: 28px;
+            margin-top:-12px;
+            margin-bottom:-7px;
+            align:left
+        }
+        .page {
+            margin: 50px auto;
+        }
+        .page h1{font-size:3.4em}
+        .page h1, .page h2{
+            margin-bottom:.5em;
+            text-shadow: 0 0 0.15em #fff;
+            color:#000
+        }
+        .bold{
+            margin-bottom: 1.5em;
+            color: green;
+            display: block;
+            font-weight:bold;
+            font-size:1.2em
+        }
+        span.half{
+            width:50%;
+            display:inline-block
+        }
+    </style>
+</head>
+<body>
+<!--header and logo -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">    <img id="logo" src="images/logowithfork.jpg">
+            </a>
+            <div class="nav" style="float:right">
+                <ul class="nav">
+                    <li class="active">
+                        <a data-toggle="modal" href="#how-it-works">How it works</a>
+                    </li>
+                    <li class="">
+                        <a data-toggle="modal" href="#for-restaurants">For the Restaurants</a>
+                    </li>
+                    <li class="">
+                        <a data-toggle="modal" href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" href="#signin">Signin</a>
+                    </li>
+                </ul>
+            </div><!--nav collapse-->
+        </div><!--container-->
+    </div><!--navbar inner-->
+</div><!--navbar-->
+<head>
+    <title></title>
+</head>
+<body>
+<!--container -->
+<div class="container page" id="results">
+    <h1>Specials Around You</h1>
+
+
+    <!--for restaurant in results-->
+    <div class="row" id="item-unique">
+        <div class="span2 image">
+            <a href="#image-enlarged"><img src="http://lorempixel.com/180/88/food/1"></a>
+            </span>
+        </div>
+        <div class="span3 special">
+            <h3>Lunch Combo</h3>
+            <p> Salad, 1 Slice, Drink for $7.99.</p>
+            <em><a href="#more-specials">7 other specials</a>
+        </div>
+        <div itemscope itemtype="http://schema.org/LocalBusiness" class="span2 restaurant">
+            <h4 itemprop="name" class="restaurant-name"><a href="#restaurant-profile">Coach Sushi</a></h4>
+            <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">2045 Newpark Mall</span>
+                <br>
+                <span itemprop="addressLocality">Newark</span>,
+                <span itemprop="addressRegion">CA</span>
+                <span itemprop="postalCode">94560</span>
+                <br>
+            </address>
+        </div>
+        <div class="span2 misc">
+            <a href="#location"><i class="icon-location"></i> 0.5 mi</a>
+            <br>
+            <a href="#add-to-cal"><i class="icon-hourglass"></i><em>1:30pm-2:00pm</em></a>
+            <a class="btn btn-primary btn-sml" href="#go-here">I wanna go here!</a>
+        </div>
+        <div class="span3">
+            <iframe frameborder="0" height="300" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Aol+395+page+mill+rd&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=46.946584,79.892578&amp;ie=UTF8&amp;hq=Aol&amp;hnear=395+Page+Mill+Rd,+Palo+Alto,+California+94306&amp;t=m&amp;ll=37.425338,-122.138979&amp;spn=0.006295,0.006295&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Aol+395+page+mill+rd&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=46.946584,79.892578&amp;ie=UTF8&amp;hq=Aol&amp;hnear=395+Page+Mill+Rd,+Palo+Alto,+California+94306&amp;t=m&amp;ll=37.425338,-122.138979&amp;spn=0.006295,0.006295" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+        </div>
+    </div><!--row-->
+    <!--endfor-->
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <script src="http://static.firebase.com/v0/firebase.js"></script>
+    <link rel="stylesheet" href="stylesheets/fontello.css">
+    <style>
+        #results > .row-fluid {
+            margin-top: .5em;
+            margin-botom: .5em
+        }
+        body{min-width:760px; background-image: url("images/purty_wood.png");
+            /*padding-top: 60px;*/
+            /*padding-bottom: 40px;*/
+        }
+        #logo {
+            height: 28px;
+            margin-top:-12px;
+            margin-bottom:-7px;
+            padding:0;
+            align:left
+        }
+        .page {
+            margin: 50px;
+        }
+        .page h1{
+            margin-bottom:.5em
+        }
+        .bold{
+            margin-bottom: 1.5em;
+            color: green;
+            display: block;
+            font-weight:bold;
+            font-size:1.2em
+        }
+        span.half{
+            width:50%;
+            display:inline-block
+        }
+        .right{float:right;}
+        .well {background-color: white;}
+    </style>
+</head>
+<body>
+<!--header and logo -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="./index.html">    <img id="logo" src="images/bizcard.png">
+            </a>
+            <div class="nav" style="float:right">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="./index.html">What we do</a>
+                    </li>
+                    <li class="">
+                        <a href="./scaffolding.html">Our Team</a>
+                    </li>
+                    <li class="">
+                        <a href="./components.html">For Restaurants</a>
+                    </li>
+                    <li class="">
+                        <a href="./javascript.html">Contact</a>
+                    </li>
+                </ul>
+            </div><!--nav collapse-->
+        </div><!--container-->
+    </div><!--navbar inner-->
+</div><!--navbar-->
+
+<!--container -->
+<div class="container page" id="results">
+    <div class="row">
+        <div class="span12">
+            <h1> Share a deal to help the grubsmart community</h1>
+
+            <form class="well">
+                <p class="right">*Fields required</p>
+                <label>Restaurant Name*</label>
+                <input type="text" class="span2" id="name" placeholder="">
+
+                <label>Deal*</label>
+                <select>
+                    <option> Monthly Special</option>
+                    <option> Lunch Combo</option>
+                    <option> Lunch Buffet</option>
+                    <option> Free</option>
+                    <option> Other</option>
+                </select>
+
+                <label>Price*</label>
+                <div class="input-prepend input-append">
+                    <span class="add-on">$</span><input class="span2" id="price" placeholder="7.99" for="appendedPrependedInput" size="16" type="text">
+                </div>
+                <label> Deal Details*</label>
+                <textarea class="input-xlarge" placeholder="please provide a short description of the deal" id="textarea" rows="3"></textarea>
+
+                <label>Phone</label>
+                <input type="text" class="span2" placeholder="">
+
+            </form>
+
+            <button onclick="submitted()" class="btn btn-large btn-primary">Share Deal</button>
+            <div id="thanks" style="display:none;">
+                <h1>Thanks for sharing!</h1>
+            </div>
+            <hr>
+            <div id="newResults">
+
+            </div>
+        </div>
+    </div>
+
+<!--footer-->
+</body>
+<script type="text/javascript">
+    var myDataReference = new Firebase('http://gamma.firebase.com/grubsmart/');
+
+
+    function submitted(){
+//        $.post('write.php', {email:$("#emailAddress").val()});
+//        $("button").fadeOut('fast', function(){
+//            $("#thanks").fadeIn('fast');
+//        });
+        var name=$("#name").val();
+        var price=$("#price").val();
+        myDataReference.push({name:name, price:price});
+    };
+    function printNewDeal(name,price){
+        $('<div/>').text(name).prepend($('<em/>').text(price)).appendTo($('#newResults'));
+//        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+    }
+    myDataReference.on('child_added', function(snapshot){
+        var deal = snapshot.val();
+        printNewDeal(deal.name, deal.price);
+    });
+</script>
+</html>
